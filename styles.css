@@ -70,18 +70,16 @@ body {
 	text-transform: uppercase;
 	color: rgb(239, 245, 255);
 	text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3);
+	text-align: center;
+
+}
+
+#newPost, #posts {
 	width: 100%;
 	margin: 0 33.3%;
 	text-align: center;
 }
 
-.posts {
-	font-size: 0.75em;
-}
-
-#newpost {
-
-}
 
 textarea {
 	font-size: 2.0em;

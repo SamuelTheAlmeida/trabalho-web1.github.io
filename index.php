@@ -5,6 +5,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,800" rel="stylesheet">
 	<script src="https://use.fontawesome.com/681f10decb.js"></script>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/components/grid.css">
 </head>
 <body>
 
@@ -30,7 +31,7 @@
 	</div>
 
 <div id="newPost">
-<span>Publicar um novo post</span>
+<span class="sub">Publicar um novo post</span>
 	
 <form>
 	<select>
@@ -47,8 +48,14 @@
 	</div>
 <hr>
 
-<div class="sub posts">
-	<span>Posts recentes</span>
+<div id="posts">
+	<span class="sub">Posts recentes</span>
+	<div class="ui grid">
+  		<div class="three wide column posts">Spare ribs jowl velit beef meatloaf. Beef ham capicola elit incididunt tempor, duis ground round nulla nostrud ut. Chuck short ribs ipsum consectetur tenderloin. Dolore t-bone drumstick ex ut eu. Beef ribs meatball est turkey deserunt swine in tongue shank capicola. Tenderloin hamburger labore bresaola in nostrud prosciutto porchetta leberkas. Et aliqua jerky, nostrud in porchetta in ut labore commodo venison flank short ribs.</div>
+  		<div class="three wide column">Tongue do minim sausage, bresaola dolor nulla qui tenderloin eiusmod ut tempor. Ham tempor in brisket, flank leberkas chuck est in chicken rump eiusmod. Pastrami velit ut, shankle pork chop id capicola ex ipsum. Lorem officia est meatball nulla meatloaf swine cupidatat tenderloin ut. Incididunt strip steak dolor turducken pork sirloin, ball tip frankfurter et in. Jowl voluptate in tri-tip ex anim doner sausage pancetta ball tip. Labore cupim lorem cupidatat sunt frankfurter beef ribs meatball enim est.</div>
+  		<div class="three wide column">Andouille nisi enim fugiat ground round sirloin burgdoggen, tenderloin consectetur. Et tenderloin pig ut, ut cillum bacon aute. Short loin shank andouille, excepteur turducken irure short ribs adipisicing ad tenderloin strip steak duis fugiat. Adipisicing prosciutto cupidatat pork belly.</div>
+  		<div class="three wide column">Rump turducken minim, nostrud frankfurter fugiat elit. Kielbasa commodo ham fugiat beef ribs pork chop, turkey short ribs shoulder. Magna cow cupim short ribs jowl, nostrud kielbasa fatback proident andouille. In beef lorem tenderloin dolor tongue. Consectetur exercitation pariatur meatloaf shank excepteur.</div>
+	</div>
 </div>
 </div>
 </body>
