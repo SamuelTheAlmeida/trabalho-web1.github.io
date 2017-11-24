@@ -1,26 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Spotted</title>
-	<link href="https://fonts.googleapis.com/css?family=Catamaran:400,700,800" rel="stylesheet">
-	<script src="https://use.fontawesome.com/681f10decb.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script type="text/javascript" src="app.js"></script>
-</head>
-<body>
-
-
-<nav id="navbar"> 
-	
-		<a href="#" class="navlinks">INÍCIO</a>
-		<a href="#" class="navlinks">SPOTTEDS</a>
-		<a href="#" class="navlinks">SOBRE</a>
-		<div id="nav-right">
-			<span id="checkLogin">Logado como: <span>não conectado</span></span>
-		</div>
-</nav>
-
+<?php include("header.php");?>
 <div id="container"> <!-- container start -->
 
 	<div id="header">
@@ -32,25 +10,6 @@
 		</div>
 		<hr>
 	</div> <!-- header div end -->
-
-<div id="newPost">
-	<span class="sub">Publicar um novo post</span>
-	<form id="submitPost" method="POST">
-		<select>
-			<option value="cantada">Viu aquela pessoa e quer mandar uma cantada</option>
-			<option value="aleatoria">Coisas aleatórias que não são cantadas direcionadas</option>
-			<option value="utilidade">Coisas de utilidade pública</option>
-			<option value="achei">Achou ou perdeu alguma coisa?</option>
-			<option value="carona">Pra vc que mora longe e precisa de uma carona pra ir pras aulas</option>
-		</select> <br>
-	<textarea name="postText" placeholder="Não seja um troll" cols="30" rows="5"></textarea>
-	<br>
-	<input type="submit" class="submit"> </input>
-</form>
-</div> <!-- newPost div end -->
-<hr>
-
-<div id="content-container">
 
 <div id="posts">
 	<span class="sub">Posts recentes</span>
@@ -65,15 +24,5 @@
 
 	
 	</div> <!-- grid div end -->
-
 </div> <!-- posts div end -->
-</div> <hr> <div id="footer"> Todos os direitos reservados </div>
-</div> <!-- container ends -->
-
-
-
-</div>
-
-
-</body>
-</html>
+<?php include("footer.php");?>
