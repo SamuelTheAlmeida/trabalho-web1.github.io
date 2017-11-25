@@ -9,6 +9,7 @@
   }
   else{
     $login = false;
+    $nickname = "não conectado";
   }
 
 ?>
