@@ -17,8 +17,8 @@
 	
 		<a href="index.php" class="navlinks"><i class="fa fa-home" aria-hidden="true"></i></a>
 		<a href="spotteds.php" class="navlinks">SPOTTEDS</a>
-		<a href="#" class="navlinks">SOBRE</a>
+		<a href="sobre.php" class="navlinks">SOBRE</a>
 		<div id="nav-right">
-			<span id="checkLogin">Logado como: <span>não conectado</span></span>
+			<span id="checkLogin">Logado como: <a style="font-size: 15px; text-decoration: none" href="login.php">Login</a>|<a href="login.php" style="font-size: 15px; text-decoration: none">Cadastrar</a></span>
 		</div>
 </nav>
