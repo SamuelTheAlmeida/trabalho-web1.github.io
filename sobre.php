@@ -14,6 +14,5 @@
 			desabafar, mandar uma cantada para aquele(a) garoto(a) de quem
 			você gostou, jogar papo fora e até mesmo usar como achados e perdidos.
 	</div>
-	<hr>
 </div> <!-- description div end -->
 <?php include("footer.php");?>
