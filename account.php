@@ -116,8 +116,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       
 	  <span>Informações da conta:</span><br>
 	  <span>Nickname: <?= $nickname ?></span><br>
-	  <span>E-mail: <?= $email ?></span><br>
+    <?php if (isset($email)): ?>
+	   <span>E-mail: <?= $email ?></span><br>
+   <?php endif; ?>
+   <?php if (isset($telefone)): ?>
 	  <span>Telefone: <?= $telefone ?></span><br>
+  <?php endif; ?>
 	  
 	  <form id="loginForm" action="login.php" method="POST" class="loginForm">
         <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs"> <br>
