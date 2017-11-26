@@ -2,7 +2,7 @@ $(function(){
 	$("#siteName").fadeIn(3000);
 	$("i").fadeToggle(3000);
 
-	$( window ).scroll(function() {
+	$( window ).on("load", function() {
   		$( "#grid" ).fadeIn(3000);
 });
 });

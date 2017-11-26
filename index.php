@@ -1,11 +1,11 @@
 <?php include("header.php");?>
 
+
 	<div id="header">
 		<span id="siteName"><i class="fa fa-eye" aria-hidden="true"></i> Spotted <i class="fa fa-eye" id="eye" 
 		aria-hidden="true"> </i></span> 
 		<div id="description">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet dictum urna, a finibus sapien egestas congue. 
-				Vestibulum mi tortor, mattis ac facilisis sollicitudin, consequat eget leo. Nam non nulla urna.
+			Mande uma cantada, desabafe ou apenas jogue papo fora!
 		</div>
 		<hr>
 	</div> <!-- header div end -->
@@ -58,4 +58,5 @@
 		</div>	
 	</div> <!-- grid div end -->
 </div> <!-- posts div end -->
+
 <?php include("footer.php");?>

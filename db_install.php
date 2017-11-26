@@ -47,8 +47,9 @@ $sql .= "CREATE TABLE posts
      idpost       INT NOT NULL PRIMARY KEY auto_increment, 
      idusuario    INT, 
      idcategoria  INT, 
-     conteudopost VARCHAR(300) NOT NULL, 
+     conteudopost VARCHAR(300) NOT NULL CHECK(CHAR_LENGTH(conteudopost) >= 13), 
      datahorapost DATETIME, 
+     aprovado BOOLEAN NOT NULL DEFAULT 0,
      FOREIGN KEY (idcategoria) REFERENCES categorias(idcategoria), 
      FOREIGN KEY (idusuario) REFERENCES usuarios(idusuario) 
   );

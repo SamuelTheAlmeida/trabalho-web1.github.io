@@ -33,7 +33,8 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
     $error = true;
   }
 } else if (!($login)){
-  $loginerror = true;
+  header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/login.php");
+  // $loginerror = true;
 }
 ?>
 

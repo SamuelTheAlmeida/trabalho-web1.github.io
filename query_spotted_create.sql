@@ -18,8 +18,9 @@ create table posts(
 	idPost int not null primary key auto_increment,
     idUsuario int,
     idCategoria int,
-    conteudoPost varchar(300) not null,
+    conteudoPost varchar(300) not null check(conteudoPost >= 13),
     dataHoraPost datetime,
+    aprovado boolean not null default 0,
     foreign key (idCategoria) references categorias(idCategoria),
     foreign key (idUsuario) references usuarios(idUsuario)
 );
