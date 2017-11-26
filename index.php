@@ -6,14 +6,16 @@
 
 	$conn = connect_db();
 
+
+
+	// definir o número de resultados por página
+	$results_per_page = 5;
+
+	// descobrir o número de resultados no banco
 	$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.datahorapost, categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
 	posts.idcategoria = categorias.idcategoria;";
-
 	$result = mysqli_query($conn, $sql);
-  
-	$nicknames = array();
-	$posts = array();
-
+	$number_of_results = mysqli_num_rows($result);
 
 	
 ?>
@@ -29,20 +31,32 @@
 <div id="posts">
 	<span class="sub">Posts recentes</span>
 	<div id="grid">
-	<?php while ($row = $result->fetch_assoc()) { 
+	<?php 
+	
+		$number_of_pages = ceil($number_of_results/$results_per_page);
+
+		// determinar qual página o usuário está visualizando
+		if (!isset($_GET["page"])) {
+			$page = 1;
+		} else {
+			$page = $_GET["page"];
+		}
+
+		// determine the SQL limit starting number for the results on the displaying page
+		$this_page_first_result = ($page-1)*$results_per_page;
+
+		// retrieve selected results from database and display them on the page
+			$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.datahorapost, 
+			categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
+	posts.idcategoria = categorias.idcategoria LIMIT " . $this_page_first_result . "," . $results_per_page . ";";
+			$result = mysqli_query($conn, $sql);
+
+			while ($row = $result->fetch_assoc()) { 
 			echo "<div class='col'> <span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
 			echo $row["conteudopost"] . "</div>";
 		}
+
 	?>
-
-		
-
-
-    	
-    
-
-
-	
 <!-- 		
 		<div class="col">
 			<span class="idUserPost"> 20matar70correr </span>
@@ -76,7 +90,14 @@
 			In beef lorem tenderloin dolor tongue. 
 			Consectetur exercitation pariatur meatloaf shank excepteur. 
 		</div>	 -->
+
 	</div> <!-- grid div end -->
+	<?php 
+		for ($page=1; $page<=$number_of_pages;$page++) {
+			echo '<a href="index.php?page=' . $page . '">' . $page . '</a>';
+		}
+
+	?>
 </div> <!-- posts div end -->
 
 <?php include("footer.php");?>
