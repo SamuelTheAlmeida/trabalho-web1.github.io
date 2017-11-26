@@ -83,7 +83,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if(mysqli_query($conn, $sql)){
           $success = true;
-          $success_msg = "Usuario cadastrado com sucesso";
+          $success_msg = "Usuario cadastrado com sucesso. Redirecionando para a home em 5 segundos...";
+          $_SESSION["nickname"] = $nicknameCadastro;
+          $_SESSION["senha"] = $senhaCadastro;
+          if (!empty($emailCadastro)) {
+            $_SESSION["email"] = $emailCadastro;
+          }
+          if (!empty($telefoneCadastro)) {
+            $_SESSION["telefone"] = $telefoneCadastro;
+          }
+
+          
+          sleep(3);
+          header( "refresh:5;url=index.php" );
         }
         else {
           $error_msg = mysqli_error($conn);
