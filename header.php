@@ -17,7 +17,7 @@ require "authenticate.php";
 <nav id="navbar"> 
 	
 		<a href="index.php" class="navlinks"><i class="fa fa-home" aria-hidden="true"></i></a>
-		<a href="spotteds.php" class="navlinks">NOVO SPOTTED</a>
+		<a href="newspotted.php" class="navlinks">NOVO SPOTTED</a>
 		<a href="sobre.php" class="navlinks">SOBRE</a>
 		<div id="nav-right">
 			<?php if(!($login)): ?>
