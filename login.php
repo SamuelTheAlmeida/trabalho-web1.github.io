@@ -131,11 +131,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <span class="sub">Quero me cadastrar</span>
       <form id="signupForm" action="login.php" method="POST" class="loginForm">
       
-        <input type="text" placeholder="Nickname desejado (3-20 caracteres)" name="nicknameCadastro" class="loginInputs"> <br>
+        <input type="text" placeholder="Nickname desejado (3-20 caracteres)" name="nicknameCadastro" class="loginInputs" 
+<?php if ($error): ?>
+        value = <?= $_POST["nicknameCadastro"]; ?>
+<?php endif; ?>
+        > <br>
         <input type="password" placeholder="Senha (8-32 caracteres)" name="senhaCadastro" class="loginInputs">
         <input type="password" placeholder="Confirme a senha" name="confirmSenhaCadastro" class="loginInputs">
-        <input type="text" placeholder="Whatsapp (opcional)" name="telefoneCadastro" class="loginInputs">
-        <input type="text" placeholder="Email (opcional)" name="emailCadastro" class="loginInputs">
+        <input type="text" placeholder="Whatsapp (opcional)" name="telefoneCadastro" class="loginInputs" 
+<?php if ($error): ?>
+        value = <?= $_POST["telefoneCadastro"]; ?>
+<?php endif; ?>
+        >
+        <input type="text" placeholder="Email (opcional)" name="emailCadastro" class="loginInputs" 
+<?php if ($error): ?>
+        value = <?= $_POST["emailCadastro"]; ?>
+<?php endif; ?>
+        >
         <button id="logar" class="submit" name="submit" value="cadastrar">Cadastrar</button>
       </form>
     </div>
