@@ -2,7 +2,7 @@
 
 <?php
 	require "db_credentials.php";
-	require "db_functions.php";
+	// require "db_functions.php";
 
 	$conn = connect_db();
 

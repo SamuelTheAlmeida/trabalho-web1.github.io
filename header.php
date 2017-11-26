@@ -1,5 +1,26 @@
 <?php
 require "authenticate.php";
+require "db_functions.php";
+
+if ($login) {
+	$conn = connect_db();
+	$sql = "SELECT * FROM usuarios WHERE usuarios.idusuario = '".$idusuario."' ;";
+	$result = mysqli_query($conn, $sql);
+	if ($result) {
+		$row = mysqli_fetch_assoc($result);
+		if ($row["isAdmin"] == 0) {
+			$href = "account.php";
+		} else {
+			$href = "admin.php";
+		}
+	}
+}
+
+
+
+
+
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -13,7 +34,6 @@ require "authenticate.php";
 </head>
 <body>
 
-
 <nav id="navbar"> 
 	
 		<a href="index.php" class="navlinks"><i class="fa fa-home" aria-hidden="true"></i></a>
@@ -24,7 +44,7 @@ require "authenticate.php";
 			<span id="checkLogin"><a style="font-size: 15px; text-decoration: none" href="login.php">
 			Login</a>|<a href="login.php" style="font-size: 15px; text-decoration: none">Cadastrar</a></span>
 			<?php else: ?>
-			<span id="checkLogin">Logado como: <a href="account.php" style="font-size: 15px;"><?= $nickname ?></a><a href="logout.php" style="font-size: 15px;">(Sair)</a>
+			<span id="checkLogin">Logado como: <a href= <?= $href ?> style="font-size: 15px;"><?= $nickname ?></a><a href="logout.php" style="font-size: 15px;">(Sair)</a>
 			<?php endif; ?>
 		</div>
 </nav>		
