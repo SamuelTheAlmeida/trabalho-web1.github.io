@@ -5,7 +5,7 @@ create table usuarios(
 	idUsuario int not null primary key auto_increment,
     nickname varchar(20) not null,
     senha varchar(32) not null,
-    telefone varchar(11),
+    telefone varchar(15),
     email varchar(50)
 );
 

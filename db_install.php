@@ -31,7 +31,7 @@ $sql = "CREATE TABLE usuarios
      idusuario INT NOT NULL PRIMARY KEY auto_increment, 
      nickname  VARCHAR(20) NOT NULL, 
      senha     VARCHAR(32) NOT NULL, 
-     telefone  VARCHAR(11), 
+     telefone  VARCHAR(15), 
      email     VARCHAR(50) 
   );";
 
