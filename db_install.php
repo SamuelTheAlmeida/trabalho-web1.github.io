@@ -26,8 +26,7 @@ if (mysqli_query($conn, $sql)) {
 }
 
 // Criar tabelas
-$sql = "
-CREATE TABLE usuarios 
+$sql = "CREATE TABLE usuarios 
   ( 
      idusuario INT NOT NULL PRIMARY KEY auto_increment, 
      nickname  VARCHAR(20) NOT NULL, 
@@ -36,11 +35,18 @@ CREATE TABLE usuarios
      email     VARCHAR(50) 
   );";
 
+$senhaAdmin = md5("123");
+
+$sql .= "INSERT INTO usuarios(nickname, senha, telefone, email) VALUES
+          ('master', '".$senhaAdmin."', '41999990000', 'spotted@yahoo.com.br');";
+
 $sql .= "CREATE TABLE categorias 
   ( 
      idcategoria   INT NOT NULL PRIMARY KEY auto_increment, 
      nomecategoria VARCHAR(20) 
   );";
+
+$sql .= "INSERT INTO categorias(nomecategoria) VALUES ('Cantada'),('Coisas Aleatorias'),('Utilidade Pública'),('Achados e Perdidos'),('Caronas');";
 
 $sql .= "CREATE TABLE posts 
   ( 

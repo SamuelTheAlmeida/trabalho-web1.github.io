@@ -1,5 +1,13 @@
 <?php include("header.php");?>
 
+<?php
+	require "db_credentials.php";
+	require "db_functions.php";
+
+	$sql = "SELECT * FROM "
+
+
+?>
 
 	<div id="header">
 		<span id="siteName"><i class="fa fa-eye" aria-hidden="true"></i> Spotted <i class="fa fa-eye" id="eye" 

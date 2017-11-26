@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
               // $success = true;
               // $success_msg = "Login realizado com sucesso.";
-              header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/login.php");
+              header("Location: " . dirname($_SERVER['SCRIPT_NAME']) . "/spotteds.php");
               // exit();
             }
             else {
