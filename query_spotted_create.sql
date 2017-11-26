@@ -6,7 +6,8 @@ create table usuarios(
     nickname varchar(20) not null,
     senha varchar(32) not null,
     telefone varchar(15),
-    email varchar(50)
+    email varchar(50),
+    isAdmin boolean not null default 0
 );
 
 create table categorias(

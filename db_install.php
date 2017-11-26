@@ -32,13 +32,14 @@ $sql = "CREATE TABLE usuarios
      nickname  VARCHAR(20) NOT NULL, 
      senha     VARCHAR(32) NOT NULL, 
      telefone  VARCHAR(15), 
-     email     VARCHAR(50) 
+     email     VARCHAR(50),
+     isAdmin boolean not null default 0
   );";
 
 $senhaAdmin = md5("123");
 
-$sql .= "INSERT INTO usuarios(nickname, senha, telefone, email) VALUES
-          ('master', '".$senhaAdmin."', '41999990000', 'spotted@yahoo.com.br');";
+$sql .= "INSERT INTO usuarios(nickname, senha, telefone, email, isAdmin) VALUES
+          ('master', '".$senhaAdmin."', '41999990000', 'spotted@yahoo.com.br', 1);";
 
 $sql .= "CREATE TABLE categorias 
   ( 
