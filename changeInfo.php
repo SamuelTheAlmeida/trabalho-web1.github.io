@@ -112,16 +112,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <div id="colsContainer">
-  <div id="gridLogin">
     <div class="changeInfo" id="borders">
       <span class="sub">Alterar dados</span>
       <form id="loginForm" action="login.php" method="POST" class="loginForm">
         <input type="text" placeholder="E-mail (opcional)" name="email" class="loginInputs"> <br>
         <input type="password" placeholder="Telefone (opcional)" name="telefone" class="loginInputs">
-        <button id="alterar" class="submit" name="submit" value="alterar">Alterar</button>
+        <button id="alterar" class="submit" name="submit" value="alterar">Alterar</button><br>
+		<span><br></span><br>
       </form>
     </div>
-  </div>
 </div>
 
 <?php include("footer.php");?>

@@ -164,12 +164,10 @@ textarea {
 .changeInfo {
 	width: 20%;
 	float: center;
-	margin: 0 10px;
-	color: white;
-	height: 300px;
-	max-height: 500px;
+	margin: 100px 10px;
+	min-height: 150px;
+	overflow: hidden;
 	padding: 0 15px;
-	padding-top: 0 15px;
 	margin-left: 40%;
 }
 

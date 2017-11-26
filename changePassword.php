@@ -111,17 +111,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <?php endif; ?>
 
 <div id="colsContainer">
-  <div id="gridLogin">
     <div class="changeInfo" id="borders">
       <span class="sub">Redefinir senha</span>
       <form id="loginForm" action="login.php" method="POST" class="loginForm">
-        <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs"> <br>
-        <input type="password" placeholder="senha" name="senhaLogin" class="loginInputs">
-		<input type="password" placeholder="confirmar senha" name="confirmarSenhaLogin" class="loginInputs">
+        <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs">
+        <input type="password" placeholder="Senha atual" name="senhaLogin" class="loginInputs">
+        <input type="password" placeholder="Nova senha" name="senhaLogin" class="loginInputs">
+		<input type="password" placeholder="Confirmar nova senha" name="confirmarSenhaLogin" class="loginInputs">
         <button id="alterar" class="submit" name="submit" value="alterar">Alterar</button>
+		<span><br></span><br>
       </form>
     </div>
-  </div>
 </div>
 
 <?php include("footer.php");?>
