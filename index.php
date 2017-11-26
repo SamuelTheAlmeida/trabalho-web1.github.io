@@ -46,14 +46,16 @@
 		$this_page_first_result = ($page-1)*$results_per_page;
 
 		// retrieve selected results from database and display them on the page
-			$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.datahorapost, 
-			categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
+			$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, 
+			DATE_FORMAT(posts.datahorapost, '%d/%c às %k:%i') AS 'datahorapost', categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
 	posts.idcategoria = categorias.idcategoria LIMIT " . $this_page_first_result . "," . $results_per_page . ";";
 			$result = mysqli_query($conn, $sql);
 
 			while ($row = $result->fetch_assoc()) { 
 			echo "<div class='col'> <span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
-			echo $row["conteudopost"] . "</div>";
+			echo "<strong>".$row['nomecategoria'] . "</strong><br>";
+			echo $row["conteudopost"] . "<br>";
+			echo $row["datahorapost"] . "</div>";
 		}
 
 	?>
