@@ -20,6 +20,11 @@ require "authenticate.php";
 		<a href="spotteds.php" class="navlinks">SPOTTEDS</a>
 		<a href="sobre.php" class="navlinks">SOBRE</a>
 		<div id="nav-right">
-			<span id="checkLogin">Logado como: <?= $nickname ?> <a href="logout.php" style="font-size: 15px;">(Sair)</a> <a style="font-size: 15px; text-decoration: none" href="login.php">Login</a>|<a href="login.php" style="font-size: 15px; text-decoration: none">Cadastrar</a></span>
+			<?php if(!($login)): ?>
+			<span id="checkLogin"><a style="font-size: 15px; text-decoration: none" href="login.php">
+			Login</a>|<a href="login.php" style="font-size: 15px; text-decoration: none">Cadastrar</a></span>
+			<?php else: ?>
+			<span id="checkLogin">Logado como: <?= $nickname ?><a href="logout.php" style="font-size: 15px;">(Sair)</a>
+			<?php endif; ?>
 		</div>
-</nav>
+</nav>			
