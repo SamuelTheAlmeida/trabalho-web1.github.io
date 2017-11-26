@@ -102,27 +102,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
+<?php if ($success): ?>
+    <h3 style="color:lightgreen;"><?= $success_msg ?></h3>
+    <?php endif; ?>
+    <?php if ($error): ?>
+        <h3 style="color:red;"><?php echo $error_msg; ?></h3>
+    <?php endif; ?>
 
-  <?php if ($success): ?>
-          <h3 style="color:lightgreen;"><?= $success_msg ?></h3>
-        <?php endif; ?>
-        <?php if ($error): ?>
-          <h3 style="color:red;"><?php echo $error_msg; ?></h3>
-        <?php endif; ?>
 
 <div id="colsContainer">
-  <div id="gridLogin">
-    <div class="loginCol" id="leftCol">
-      <span class="sub">Redefinir senha</span>
-      <form id="loginForm" action="login.php" method="POST" class="loginForm">
+    <div class="changeInfo" id="borders">
+      <span class="sub">Bem vindo <?= $nickname ?></span><br>
       
+	  <span>Informações da conta:</span><br>
+	  <span>Nickname: <?= $nickname ?></span><br>
+	  <span>E-mail: <?= $email ?></span><br>
+	  <span>Telefone: <?= $telefone ?></span><br>
+	  
+	  <form id="loginForm" action="login.php" method="POST" class="loginForm">
         <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs"> <br>
         <input type="password" placeholder="senha" name="senhaLogin" class="loginInputs">
 		<input type="password" placeholder="senha" name="confirmarSenhaLogin" class="loginInputs">
         <button id="alterar" class="submit" name="submit" value="alterar">Alterar</button>
+		<span><br></span><br>
       </form>
     </div>
-  </div>
 </div>
 
 <?php include("footer.php");?>
