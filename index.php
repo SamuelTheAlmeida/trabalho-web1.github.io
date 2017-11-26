@@ -4,9 +4,18 @@
 	require "db_credentials.php";
 	require "db_functions.php";
 
-	$sql = "SELECT * FROM "
+	$conn = connect_db();
+
+	$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.datahorapost, categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
+	posts.idcategoria = categorias.idcategoria;";
+
+	$result = mysqli_query($conn, $sql);
+  
+	$nicknames = array();
+	$posts = array();
 
 
+	
 ?>
 
 	<div id="header">
@@ -20,18 +29,21 @@
 <div id="posts">
 	<span class="sub">Posts recentes</span>
 	<div id="grid">
-		<div class="col">
-			<span class="idUserPost"> AnJoDaMorTe</span>
-			Spare ribs jowl velit beef meatloaf. 
-			Beef ham capicola elit incididunt tempor, 
-			duis ground round nulla nostrud ut. 
-			Chuck short ribs ipsum consectetur tenderloin. 
-			Dolore t-bone drumstick ex ut eu. 
-			Beef ribs meatball est turkey deserunt swine in tongue shank capicola. 
-			Tenderloin hamburger labore bresaola in nostrud prosciutto porchetta leberkas.
-			Et aliqua jerky, nostrud in porchetta in ut labore commodo venison flank short ribs. 
-		</div>
+	<?php while ($row = $result->fetch_assoc()) { 
+			echo "<div class='col'> <span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
+			echo $row["conteudopost"] . "</div>";
+		}
+	?>
+
 		
+
+
+    	
+    
+
+
+	
+<!-- 		
 		<div class="col">
 			<span class="idUserPost"> 20matar70correr </span>
 			Tongue do minim sausage, 
@@ -63,7 +75,7 @@
 			nostrud kielbasa fatback proident andouille. 
 			In beef lorem tenderloin dolor tongue. 
 			Consectetur exercitation pariatur meatloaf shank excepteur. 
-		</div>	
+		</div>	 -->
 	</div> <!-- grid div end -->
 </div> <!-- posts div end -->
 
