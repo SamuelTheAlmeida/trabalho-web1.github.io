@@ -117,12 +117,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="loginCol" id="leftCol">
       <span class="sub">Já possuo conta</span>
         
+// <script type="text/javascript" src="validacaoTelefone.js"> </script>
+
 
       <form id="loginForm" action="login.php" method="POST" class="loginForm">
-      
-        <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs"> <br>
+        <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs" required="required"> <br>
        
-        <input type="password" placeholder="senha" name="senhaLogin" class="loginInputs">
+        <input type="password" placeholder="senha" name="senhaLogin" class="loginInputs" required="required">
         <button id="logar" class="submit" name="submit" value="logar">Login</button>
       </form>
     </div>
@@ -131,19 +132,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <span class="sub">Quero me cadastrar</span>
       <form id="signupForm" action="login.php" method="POST" class="loginForm">
       
-        <input type="text" placeholder="Nickname desejado (3-20 caracteres)" name="nicknameCadastro" class="loginInputs" 
+        <input type="text" minlength="3" maxlength="20" placeholder="Nickname desejado (3-20 caracteres)" required="required" name="nicknameCadastro" class="loginInputs" 
 <?php if ($error): ?>
         value = <?= $_POST["nicknameCadastro"]; ?>
 <?php endif; ?>
         > <br>
-        <input type="password" placeholder="Senha (8-32 caracteres)" name="senhaCadastro" class="loginInputs">
-        <input type="password" placeholder="Confirme a senha" name="confirmSenhaCadastro" class="loginInputs">
-        <input type="text" placeholder="Whatsapp (opcional)" name="telefoneCadastro" class="loginInputs" 
+        <input minlength="8" maxlength="32" required="required" type="password" placeholder="Senha (8-32 caracteres)" name="senhaCadastro" class="loginInputs">
+        <input minlength="8" maxlength="32" required="required" type="password" placeholder="Confirme a senha" name="confirmSenhaCadastro" class="loginInputs">
+        <input minlength="15" maxlength="15" id="telefoneCadastro" type="tel" pattern="^\(d{2})\d{4}-\d{4}$" placeholder="Whatsapp (opcional)" name="telefoneCadastro" class="loginInputs" 
 <?php if ($error): ?>
         value = <?= $_POST["telefoneCadastro"]; ?>
 <?php endif; ?>
         >
-        <input type="text" placeholder="Email (opcional)" name="emailCadastro" class="loginInputs" 
+        <input minlength="3" maxlength="35" type="email" placeholder="Email (opcional)" name="emailCadastro" class="loginInputs" 
 <?php if ($error): ?>
         value = <?= $_POST["emailCadastro"]; ?>
 <?php endif; ?>
