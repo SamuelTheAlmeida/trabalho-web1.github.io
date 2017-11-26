@@ -19,15 +19,6 @@
 
 	
 ?>
-
-	<div id="header">
-		<span id="siteName"><i class="fa fa-eye" aria-hidden="true"></i> Spotted <i class="fa fa-eye" id="eye" 
-		aria-hidden="true"> </i></span> 
-		<div id="description">
-			Mande uma cantada, desabafe ou apenas jogue papo fora!
-		</div>
-		<hr>
-	</div> <!-- header div end -->
 <div id="posts">
 	<span class="sub">Posts recentes</span>
 	<div id="grid">
@@ -54,7 +45,8 @@
 			while ($row = $result->fetch_assoc()) { 
 			echo "<div class='col'> <span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
 			echo "<strong>".$row['nomecategoria'] . "</strong><br>";
-			echo $row["conteudopost"] . "<br>";
+			echo "<textarea value = " . $row["conteudopost"] . ">" . $row["conteudopost"] . "</textarea><br>";
+			echo "<a href='#'> Aprovar </a>" . "<a href='#'> Alterar </a>" . "<a href='#'> Rejeitar </a>" . "<br>"; 
 			echo $row["datahorapost"] . "</div>";
 		}
 
