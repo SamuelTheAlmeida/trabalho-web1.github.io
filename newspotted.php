@@ -1,5 +1,5 @@
 <?php
-require 'db_functions.php';
+require "db_functions.php";
 
 include("header.php");
 
@@ -56,7 +56,7 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
 <?php endif; ?>
 
 
-  <form id="submitPost" method="POST" action="spotteds.php">
+  <form id="submitPost" method="POST" action="newspotted.php">
     <select name="tag">
       <option value="1">Viu aquela pessoa e quer mandar uma cantada</option>
       <option value="2">Coisas aleatórias que não são cantadas direcionadas</option>
