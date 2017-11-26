@@ -18,7 +18,7 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
 
       $sql = "INSERT INTO posts(idusuario, idcategoria, conteudopost, datahorapost)
               VALUES
-              (1, '".$tag."', '".$postContent."', NOW());";
+              ('".$idusuario."', '".$tag."', '".$postContent."', NOW());";
 
       if(mysqli_query($conn, $sql)){
         $success = true;

@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if(mysqli_query($conn, $sql)){
           $success = true;
-          $success_msg = "Usuario cadastrado com sucesso. Redirecionando para a home em 5 segundos...";
+          $success_msg = "Usuario cadastrado com sucesso.";
           $_SESSION["nickname"] = $nicknameCadastro;
           $_SESSION["senha"] = $senhaCadastro;
           if (!empty($emailCadastro)) {
@@ -92,6 +92,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           if (!empty($telefoneCadastro)) {
             $_SESSION["telefone"] = $telefoneCadastro;
           }
+          
+
+        $sql2 = "SELECT MAX(idusuario)  AS 'id' FROM usuarios;";
+        $result = mysqli_query($conn, $sql2);
+        $row = mysqli_fetch_assoc($result );
+        $_SESSION["idusuario"] = $row['id'];
 
           
           sleep(3);

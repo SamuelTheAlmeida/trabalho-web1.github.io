@@ -4,6 +4,7 @@
   if (isset($_SESSION["nickname"]) && isset($_SESSION["senha"])) {
     $login = true;
     $nickname = $_SESSION["nickname"];
+    $idusuario = $_SESSION["idusuario"];
     $senha = $_SESSION["senha"];
     if (!empty($_SESSION["email"])) {
       $email = $_SESSION["email"];

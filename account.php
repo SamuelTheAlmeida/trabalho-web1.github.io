@@ -9,8 +9,8 @@ $success = false;
 $loginerror = false;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if ($_POST['submit'] == 'logar') {
-     if (!empty($_POST["nicknameLogin"]) && !empty($_POST["senhaLogin"])) {
+  if ($_POST['submit'] == 'alterar') {
+     if (!empty($_POST["nicknameLogin"]) && !empty($_POST["senhaLogin"]) && !empty($_POST["confirmarSenhaLogin"])) {
 
         $conn = connect_db();
 
@@ -123,13 +123,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 	  <span>Telefone: <?= $telefone ?></span><br>
   <?php endif; ?>
 	  
-	  <form id="loginForm" action="login.php" method="POST" class="loginForm">
-        <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs"> <br>
-        <input type="password" placeholder="senha" name="senhaLogin" class="loginInputs">
-		<input type="password" placeholder="senha" name="confirmarSenhaLogin" class="loginInputs">
-        <button id="alterar" class="submit" name="submit" value="alterar">Alterar</button>
+	  <form id="loginForm" action="account.php" method="POST" class="loginForm">
+      <input type="text" placeholder="Nickname" name="nicknameLogin" class="loginInputs"> <br>
+      <input type="password" placeholder="senha" name="senhaLogin" class="loginInputs">
+  		<input type="password" placeholder="senha" name="confirmarSenhaLogin" class="loginInputs">
+      <button id="alterar" class="submit" name="submit" value="alterar">Alterar</button>
 		<span><br></span><br>
-      </form>
+    </form>
     </div>
 </div>
 
