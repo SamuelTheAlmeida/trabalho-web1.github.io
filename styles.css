@@ -158,6 +158,26 @@ textarea {
 	height: 300px;
 	max-height: 500px;
 	padding: 0 15px;
+	
+}
+
+.changeInfo {
+	width: 20%;
+	float: center;
+	margin: 0 10px;
+	color: white;
+	height: 300px;
+	max-height: 500px;
+	padding: 0 15px;
+	padding-top: 0 15px;
+	margin-left: 40%;
+}
+
+#borders {
+	border-right: 1px solid rgba(255, 255, 255, 0.3);
+	border-left: 1px solid rgba(255, 255, 255, 0.3);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+	border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #leftCol {
@@ -171,6 +191,8 @@ textarea {
 
 .loginForm {
 	width: 100%;
+	margin-top: 12%;
+	display: block;
 }
 
 .loginInputs {
