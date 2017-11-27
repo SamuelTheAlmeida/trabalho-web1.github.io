@@ -1,7 +1,7 @@
 <?php include("header.php");?>
 <div id="header">
-	<span id="siteName"><i class="fa fa-eye" aria-hidden="true"></i> Spotted <i class="fa fa-eye" id="eye" 
-	aria-hidden="true"> </i></span> 
+	<br/><br/>
+	<span id="siteName"><img src="images/heart-eye.png" class="logo">Spotted</span> 
 	<br>
 	<br>
 	<span class="sub">Quem somos?</span>

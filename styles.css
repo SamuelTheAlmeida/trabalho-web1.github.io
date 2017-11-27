@@ -1,67 +1,80 @@
 body {
-	margin: 0;
+	margin:0;
 	font-family: 'Catamaran', sans-serif;
-	padding-bottom: 10px;
-		background: #667db6;  
-	background: -webkit-linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6); 
-	background: linear-gradient(to bottom, #667db6, #0082c8, #0082c8, #667db6); 
+	position: absolute;
+	overflow-x: hidden;
+	width: 100%;
 }
 
 
 #navbar {
-	padding-top: 15px;
-	position: static;
+	font-family: 'Montserrat', sans-serif;
+	padding-top: 10px;
+	display: inline;
+	position: fixed;
 	width: 100%;
-	background-color: rgba(255, 255, 255, 0.1);
-	height: 50px;
-	margin: 0;
+	background-color: #ADD8E6;
+	height: 60px;
+	margin-top: 0;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #nav-right {
 	display: inline;
 	position: absolute;
 	right: 75px;
-	margin-top: 10px;
+	margin-top: 5px;
+
+}
+
+#nav-left{
+	display: inline;
+	position: absolute;
+	margin: 10px 0 0 20px;
 }
 
 #navbar a {
 	text-decoration: none;
 	font-size: 1.5em;
-	margin: 0 25px;
+	margin: 0 25px;	
 }
 
 #navbar a, #nav-right {
-	color: #e0ecff;
+	color: #333;
 }
 
-.navlinks:hover {
-	text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 0.3);
+.navlinks:hover {	
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.19);
 }
 
 #header {
 	position: static;
 	text-align: center;
-	margin: 15px 0;
+	margin: 60px 0 0 0;
+	z-index: -1;
+	width: 100%;
+	height: 550px;
 }
 
 #siteName {
 	font-size: 4.0em;
 	font-weight: 800;
 	text-transform: uppercase;
-	color: rgb(239, 245, 255);
-	text-shadow: 5px 1px 1px rgba(0, 0, 0, 0.3);
+	color: #333;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.19);
 	display: none; /*jQuery*/
+	text-align: center;
 }
 
 .fa {
 	color: rgba(127, 175, 255, 0.5);
-	text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 1.0);
 	display: none; /*jQuery*/
 }
 
 #description {
-	color: white;
-	text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 0.3);
+	font-family: 'Montserrat', sans-serif;
+	color: #333;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.19);
 	font-size: 1.2em;
 	text-align: center;
 	width: 400px;
@@ -72,20 +85,24 @@ body {
 	font-size: 1.5em;
 	font-weight: 800;
 	text-transform: uppercase;
-	color: rgb(239, 245, 255);
-	text-shadow: 0.5px 0.5px 1px rgba(255, 255, 255, 0.3);
-	text-align: center;
+	color: #333;
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.19);
+	text-align: center;	
 	margin: 35px 0;
+	width: 100%;
+	font-family: 'Catamaran', sans-serif!important;
 }
 
-#newPost, #posts {
-	text-align: center;
-}
 
 #posts {
-	margin: 0 10px;
+	margin: 0 0 0 0;
+	text-align: center;
+	width: 100%;	
 }
 
+.newSpotted{
+	font-family: 'Montserrat', sans-serif;	
+}
 
 textarea {
 	font-size: 2.0em;
@@ -94,7 +111,8 @@ textarea {
 }
 
 .submit {
-	background-color: #ddeaff;
+	font-family: 'Montserrat', sans-serif;	
+	background-color: #ADD8E6;
     border: none;
     color: black;
     padding: 15px 32px;
@@ -104,45 +122,67 @@ textarea {
     font-size: 16px;
 }
 
+.submit:hover{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #grid {
-	margin: 0 5%;
-	display: none;
+	text-align: center;
+	width: 90%;
+	margin-left: 10%;
+	margin-bottom: 50px;
 }
 
 .col {
+	display: inline-block;
 	max-width: 23%;
 	float: left;
-	margin: 20px 10px;
-	color: white;
-	height: 5%;
-	max-height: 500px;
-	text-align: justify;
-	background-color: rgba(255, 255, 255, 0.1);
-	border-radius: 55px;
-	border: 0.5px solid rgba(0, 0, 0, 0.4);
-	padding: 12px;
+	margin: 0 10px 30px 30px;
+	color: #333;
+	max-height: 600px;
+	border: 0.5px solid #ADD8E6;
+	border-left: 5px solid #333;
+	background-color: #ADD8E6;
+	padding: 12px;	
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.rowPost{
+/*	height: 75px;*/
+	min-height: 75px;
+	max-height: 200px;
+	width: 200px;
+/*	max-height: 300px;*/
+	text-align: justify;
+/*	max-width: 300px;*/
+	word-wrap: break-word;
+}
+
+
 .idUserPost {
-	color: white;
+	color: #333;
 	display: block;
-	text-shadow: 0.5px 0.5px 2px rgba(255, 255, 255, 1.0);
+	text-shadow: 0 0 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(0, 0, 0, 0.19);
+	font-style: strong;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #content-container {
 	height: 50px;
 }
 
-
 #footer {
-  position: absolute;
+  display: inline-block;			
+  position: static;
 /*  right: 0;*/
   bottom: 0;
+  margin: 0;
 /*  left: 0;*/
-  padding: 1rem;
+/*  padding: 1rem;*/
   text-align: center;
-  width: 96%;
-  margin: 0 auto;
+  width: 100%;
+  background-color: #333;
+  color: white;
 }
 
 #colsContainer {
@@ -154,28 +194,11 @@ textarea {
 	width: 45%;
 	float: left;
 	margin: 0 10px;
-	color: white;
+	color: #333;
 	height: 300px;
 	max-height: 500px;
 	padding: 0 15px;
-	
-}
-
-.changeInfo {
-	width: 20%;
-	float: center;
-	margin: 100px 10px;
-	min-height: 150px;
-	overflow: hidden;
-	padding: 0 15px;
-	margin-left: 40%;
-}
-
-#borders {
-	border-right: 1px solid rgba(255, 255, 255, 0.3);
-	border-left: 1px solid rgba(255, 255, 255, 0.3);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-	border-top: 1px solid rgba(255, 255, 255, 0.3);
+	font-weight: bold;
 }
 
 #leftCol {
@@ -189,15 +212,18 @@ textarea {
 
 .loginForm {
 	width: 100%;
-	margin-top: 12%;
-	display: block;
 }
 
 .loginInputs {
 	width: 100%;
 	height: 30px;
 	margin-bottom: 3%;
-	font-size: 0.75em;
+	font-size: 1em;
+	border-style: solid;
+	border-color: white;
+	border-bottom: 1px solid #0a1010;
+	outline: none;
+	font-family: 'Montserrat', sans-serif;
 }
 
 #logar {
@@ -207,6 +233,64 @@ textarea {
 
 h3 {
 	text-align: center;
-	margin: 0;
+/*	margin: 0;*/
 }
 
+.home {	
+	position: absolute;
+	width:50px; 
+	height:auto;
+}
+
+.config{
+	width:30px; 
+	height:auto;
+	position: absolute;
+	margin-top: 5px;
+}
+
+.logo{
+	width:60px; 
+	height:auto;
+	padding: 15px 10px 0 0;
+}
+
+.changeInfo{
+	width: 50%;
+	font-family: 'Montserrat', sans-serif!important;
+	margin: 0 auto;
+}
+
+#loginForm{
+	width: 300px;
+	margin: 0 auto;
+}
+
+#infoConta{
+	font-weight: bold;
+}
+
+.numPage{
+	text-decoration: none;
+	float: none;
+	display: inline;
+	font-size: 1.75em;
+	margin: 5px 10px;
+	border-right: 0.5px solid rgba(0, 0, 0, 0.5);
+	padding: 5px;
+}
+
+#pages {
+	width: 20%;
+	position: absolute;
+	bottom: 40px;
+	right: 5px;
+}
+
+.admActions {
+	text-decoration: none;
+	color: black;
+	font-weight: 800;
+	margin: 5px 10px;
+	padding: 3px;
+}

@@ -121,21 +121,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 
-  <?php if ($success): ?>
+
+<div id="header">  
+
+<div id="colsContainer">
+
+    <?php if ($success): ?>
           <h3 style="color:lightgreen;"><?= $success_msg ?></h3>
         <?php endif; ?>
 
         <?php if ($error): ?>
           <h3 style="color:red;"><?php echo $error_msg; ?></h3>
         <?php endif; ?>
-<div id="colsContainer">
 
-
+        
   <div id="gridLogin">
+  <br/><br/>
     <div class="loginCol" id="leftCol">
       <span class="sub">Já possuo conta</span>
-        
-// <script type="text/javascript" src="validacaoTelefone.js"> </script>
+      <br/><br/> 
+ <script type="text/javascript" src="validacaoTelefone.js"> </script>
 
 
       <form id="loginForm" action="login.php" method="POST" class="loginForm">
@@ -148,12 +153,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <div class="loginCol" id="rightCol">
       <span class="sub">Quero me cadastrar</span>
+      <br/><br/>
       <form id="signupForm" action="login.php" method="POST" class="loginForm">
       
         <input type="text" minlength="3" maxlength="20" placeholder="Nickname desejado (3-20 caracteres)" required="required" name="nicknameCadastro" class="loginInputs" 
-<?php if ($error): ?>
-        value = <?= $_POST["nicknameCadastro"]; ?>
-<?php endif; ?>
+        <?php if ($error): ?>
+          value = <?= $_POST["nicknameCadastro"]; ?>
+        <?php endif; ?>
         > <br>
         <input minlength="8" maxlength="32" required="required" type="password" placeholder="Senha (8-32 caracteres)" name="senhaCadastro" class="loginInputs">
         <input minlength="8" maxlength="32" required="required" type="password" placeholder="Confirme a senha" name="confirmSenhaCadastro" class="loginInputs">
@@ -168,7 +174,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php endif; ?>
         >
         <button id="logar" class="submit" name="submit" value="cadastrar">Cadastrar</button>
-      </form>
+      </div>
     </div>
   </div>
 </div>

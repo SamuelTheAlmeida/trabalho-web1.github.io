@@ -40,7 +40,8 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<div id="newPost">
+<div id="header">
+  <br/><br/><br/>
   <span class="sub">Publicar um novo post</span>
 
 <?php if ($success): ?>
@@ -64,9 +65,10 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
       <option value="4">Achou ou perdeu alguma coisa?</option>
       <option value="5">Pra vc que mora longe e precisa de uma carona pra ir pras aulas</option>
     </select> <br>
-    <textarea name="postText" placeholder="Não seja um troll" cols="30" rows="5"></textarea>
+    <textarea class="newSpotted" name="postText" placeholder="Não seja um troll" cols="30" rows="5"></textarea>
     <br>
     <input type="submit" class="submit"></input>
   </form>
-</div> <!-- newPost div end -->
+  
+</div>
 <?php include("footer.php");?>

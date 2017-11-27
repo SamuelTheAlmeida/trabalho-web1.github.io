@@ -61,12 +61,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <h3 style="color:red;"><?php echo $error_msg; ?></h3>
     <?php endif; ?>
 
-
+<div id="header">
 <div id="colsContainer">
     <div class="changeInfo" id="borders">
+    <br/><br/>
       <span class="sub">Bem vindo <?= $nickname ?></span><br>
-      
-	  <span>Informações da conta:</span><br>
+    <br/><br/> 
+	  <span id=infoConta"">Informações da conta:</span><br>
+    <br/>
 	  <span>Nickname: <?= $nickname ?></span><br>
     <?php if (isset($email)): ?>
 	   <span>E-mail: <?= $email ?></span><br>
@@ -83,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 		<span><br></span><br>
     </form>
     </div>
+</div>
 </div>
 
 <?php include("footer.php");?>
