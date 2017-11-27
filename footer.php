@@ -1,3 +1,4 @@
+	</div> <!-- siteContainer div -->
 	<div id="footer"><hr> Todos os direitos reservados </div>
 </body>
 <script src="https://use.fontawesome.com/681f10decb.js"></script>

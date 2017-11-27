@@ -5,23 +5,24 @@
 	$conn = connect_db();
 
 	// definir o número de resultados por página
-	$results_per_page = 6;
+	$results_per_page = 12;
 
 	// descobrir o número de resultados no banco
-	$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.datahorapost, categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
-	posts.idcategoria = categorias.idcategoria;";
+	$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.aprovado, posts.datahorapost, categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
+	posts.idcategoria = categorias.idcategoria AND posts.aprovado = 0;";
 	$result = mysqli_query($conn, $sql);
 	$number_of_results = mysqli_num_rows($result);
 
-	$postNewText = $_POST['postNewText'];
-	if (isset($_POST['idpost'])) {
-		$idpost = $_POST['idpost'];
-	}
+	
 
 	$error = false;
 	$success = false;
 
 	if ($_SERVER["REQUEST_METHOD"] == "POST") {
+		$postNewText = $_POST['postNewText'];
+		if (isset($_POST['idpost'])) {
+			$idpost = $_POST['idpost'];
+		}
 		switch($_POST["submit"]) {
 			case 'rejeitar':
 				$query = "DELETE FROM posts WHERE idpost = '".$idpost."';";
@@ -63,9 +64,9 @@
 	</div> <!-- header div end -->
 <div id="posts">
 		<br/><br/>
-		<span class="sub">Posts recentes</span>
+		<span class="sub">Posts pendentes de aprovação</span>
 		<br/><br/>
-	<div id="grid">
+	<div id="grid" class="ui grid">
 	<?php 
 	
 		$number_of_pages = ceil($number_of_results/$results_per_page);
@@ -77,25 +78,26 @@
 			$page = $_GET["page"];
 		}
 
-		// determine the SQL limit starting number for the results on the displaying page
+		// determinar o número inicial de resultados para a condição LIMIT da query
 		$this_page_first_result = ($page-1)*$results_per_page;
 
-		// retrieve selected results from database and display them on the page
+		// obter os resultados do banco e mostrar na página
 			$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, 
 			DATE_FORMAT(posts.datahorapost, '%d/%c às %k:%i') AS 'datahorapost', categorias.nomecategoria, posts.aprovado FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
 	posts.idcategoria = categorias.idcategoria AND posts.aprovado = 0 ORDER BY posts.datahorapost DESC LIMIT " . $this_page_first_result . "," . $results_per_page . ";";
 			$result = mysqli_query($conn, $sql);
 
 			while ($row = $result->fetch_assoc()) { 
-				echo "<form method='POST' action='admin.php'>";
-				echo "<div class='col'> <span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
+
+				echo "<div class='adminCol five wide column'>";
+				echo "<form method='POST' action='admin.php'><span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
 				echo "<strong>".$row['nomecategoria'] . "</strong><br>";
 				echo "<textarea name='postNewText' cols=18 rows=4 value = " . $row["conteudopost"] . ">" . $row["conteudopost"] . "</textarea><br>";
 				echo "<input readonly type='hidden' name='idpost' value='". $row["idpost"] . "'</input>";
 				echo "<button name='submit' value='aprovar' class='admActions' id='aprovar'> Aprovar </button>"; 
 				echo "<button name='submit' value='modificar' class='admActions' id='modificar'> Modificar </button>"; 
 				echo "<button name='submit' value='rejeitar' class='admActions' id='rejeitar'> Rejeitar </button><br>"; 
-				echo $row["datahorapost"] . "</div></form>";
+				echo $row["datahorapost"] . "</form></div>";
 		}
 
 	?>
@@ -105,10 +107,10 @@
 
 
 
-	<div id="pages"><span>Páginas: </span>
+	<div class="adminPages"><span>Páginas: </span>
 	<?php 
 		for ($page=1; $page<=$number_of_pages;$page++) {
-			echo '<a class="numPage" href="admin.php?page=' . $page . '">' . $page . '</a>';
+			echo '<a class="adminNumPage" href="admin.php?page=' . $page . '">' . $page . '</a>';
 		}
 
 	?>
