@@ -68,10 +68,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $senhaCadastro = mysqli_real_escape_string($conn,$_POST["senhaCadastro"]);
       $confirmSenhaCadastro = mysqli_real_escape_string($conn,$_POST["confirmSenhaCadastro"]);
       if (isset($_POST["telefoneCadastro"])) {
-        $telefone = mysqli_real_escape_string($conn,$_POST["telefoneCadastro"]);
+        $telefoneCadastro = mysqli_real_escape_string($conn,$_POST["telefoneCadastro"]);
       }
       if (isset($_POST["emailCadastro"])) {
-        $email = mysqli_real_escape_string($conn,$_POST["emailCadastro"]);
+        $emailCadastro = mysqli_real_escape_string($conn,$_POST["emailCadastro"]);
       }
 
       if ($senhaCadastro == $confirmSenhaCadastro) {
@@ -79,7 +79,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $sql = "INSERT INTO usuarios
                 (nickname, senha, telefone, email) VALUES
-                ('".$nicknameCadastro."', '".$senhaCadastro."', '".$telefone."', '".$email."');";
+                ('".$nicknameCadastro."', '".$senhaCadastro."', '".$telefoneCadastro."', '".$emailCadastro."');";
 
         if(mysqli_query($conn, $sql)){
           $success = true;
