@@ -18,16 +18,20 @@ body {
 	position: static;
   	margin: 0;
 
- 	min-height: 1500px;
- 	max-height: 1500px;
+ 	min-height: 1000px;
+ 	max-height: 1000px;
  	font-family: 'Catamaran', sans-serif;
  	padding-bottom: 500px;
 }
 
+a, a:link, a:visited, a:focus, a:hover, a:active{
+  text-decoration:none; 
+}
+
 
 .small {
- 	min-height: 650px;
- 	max-height: 650px;
+ 	min-height: 850px;
+ 	max-height: 850px;
 }
 .medium {
  	min-height: 1200px;
@@ -161,6 +165,10 @@ textarea {
 	padding: 0 5px;
 }
 
+#postNewText {
+	font-size: 1.5em;
+}
+
 .submit {
 	font-family: 'Montserrat', sans-serif;	
 	background-color: #ADD8E6;
@@ -190,41 +198,45 @@ textarea {
 
 .col {
 	text-align: center;
-	display: inline-block;
 	max-width: 23%;
 	clear: right;
-/*	margin: 0 10px 30px 30px;*/
 	margin: 1%;
 	color: #333;
-/*	max-height: 600px;*/
-	height: 250px;
+	min-height: 250px;
+	height: 350px;
 	border: 0.5px solid #ADD8E6;
 	border-left: 5px solid #333;
 	background-color: #ADD8E6;
-	padding: 2%;	
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.adminCol {
+#overlay .adminCol {
+	text-align: center;
+	max-width: 23%;
+	clear: right;
+	margin: 1%;
+	color: #333;
+	min-height: 250px;
+	height: 350px;
 	border: 0.5px solid #ADD8E6;
 	border-left: 5px solid #333;
 	background-color: #ADD8E6;
-	margin: 10px 3px;
-	padding: 2%;
-
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 
 .rowPost{
 /*	height: 75px;*/
 /*	min-height: 125px;
 	max-height: 200px;*/
-	height: 120px;
-	max-height: 150px;
+	min-height: 270px;
+	max-height: 500px;
 	width: 200px;
 /*	max-height: 300px;*/
 	text-align: justify;
 /*	max-width: 300px;*/
 	word-wrap: break-word;
+	font-size: 0.90em;
 }
 
 
@@ -338,10 +350,10 @@ h3 {
 }
 
 #pages {
-	margin-top: 55%;
+	margin-top: 20%;
 	position: relative;
 	text-align: right;
-	font-size: 1.75em;
+	font-size: 1.5em;
 }
 
 .adminPages {
@@ -352,7 +364,7 @@ h3 {
 }
 
 .smallPages {
-	margin-top: 15% !important;
+	margin-top: 20% !important;
 }
 
 .mediumPages {
@@ -360,23 +372,23 @@ h3 {
 }
 
 .bigPages {
-	margin-top: 65%;
+	margin-top: 85%;
 }
 
-.adminNumPages {
+#overlay .adminNumPages, .adminNumPages:visited {
 	text-decoration: none;
 	float: none;
 	display: inline;
 	font-size: 1.75em;
-	margin: 5px 10px;
+	margin: 5px 20px;
 	border-right: 0.5px solid rgba(0, 0, 0, 0.5);
-	padding: 5px;
+	padding: 20px;
 }
 
 .admActions {
 	text-decoration: none;
 	color: black;
 	font-weight: 800;
-	margin: 5px 10px;
+	margin: 15px 5px;
 	padding: 3px;
 }

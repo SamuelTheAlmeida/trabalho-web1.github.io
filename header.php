@@ -38,7 +38,7 @@ if ($login) {
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	
 </head>
-<body>
+<body id="overlay">
 
 	<nav id="navbar">
 		<a href="index.php" class="navlinks"><img class="home" src="images/home.png" alt=""></a>

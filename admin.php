@@ -5,7 +5,7 @@
 	$conn = connect_db();
 
 	// definir o número de resultados por página
-	$results_per_page = 12;
+	$results_per_page = 4;
 
 	// descobrir o número de resultados no banco
 	$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.aprovado, posts.datahorapost, categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND
@@ -89,10 +89,10 @@
 
 			while ($row = $result->fetch_assoc()) { 
 
-				echo "<div class='adminCol five wide column'>";
+				echo "<div class='adminCol four wide column'>";
 				echo "<form method='POST' action='admin.php'><span class='idUserPost'>". $row["nickname"] . " - ". $row["telefone"] . "</span>";
 				echo "<strong>".$row['nomecategoria'] . "</strong><br>";
-				echo "<textarea name='postNewText' cols=18 rows=4 value = " . $row["conteudopost"] . ">" . $row["conteudopost"] . "</textarea><br>";
+				echo "<textarea id='postNewText' name='postNewText' cols=18 rows=7 value = " . $row["conteudopost"] . ">" . $row["conteudopost"] . "</textarea><br>";
 				echo "<input readonly type='hidden' name='idpost' value='". $row["idpost"] . "'</input>";
 				echo "<button name='submit' value='aprovar' class='admActions' id='aprovar'> Aprovar </button>"; 
 				echo "<button name='submit' value='modificar' class='admActions' id='modificar'> Modificar </button>"; 
@@ -110,7 +110,7 @@
 	<div class="adminPages"><span>Páginas: </span>
 	<?php 
 		for ($page=1; $page<=$number_of_pages;$page++) {
-			echo '<a class="adminNumPage" href="admin.php?page=' . $page . '">' . $page . '</a>';
+			echo '<a class="adminNumPage" href="admin.php?page=' . $page . '"> ' . $page . ' </a>';
 		}
 
 	?>

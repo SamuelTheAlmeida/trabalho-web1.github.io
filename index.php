@@ -9,7 +9,7 @@
 
 
 	// definir o número de resultados por página
-	$results_per_page = 12;
+	$results_per_page = 4;
 
 	// descobrir o número de resultados no banco
 	$sql = "SELECT usuarios.nickname, usuarios.telefone, usuarios.email, posts.idpost, posts.conteudopost, posts.datahorapost, categorias.nomecategoria FROM usuarios, posts, categorias WHERE usuarios.idusuario = posts.idusuario AND

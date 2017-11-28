@@ -15,8 +15,8 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
 
     $tag = mysqli_real_escape_string($conn, $_POST["tag"]);
     $postContent = mysqli_real_escape_string($conn, $_POST["postText"]);
-
-      $sql = "INSERT INTO posts(idusuario, idcategoria, conteudopost, datahorapost)
+    if (strlen($postContent) <= 300) {
+        $sql = "INSERT INTO posts(idusuario, idcategoria, conteudopost, datahorapost)
               VALUES
               ('".$idusuario."', '".$tag."', '".$postContent."', NOW());";
 
@@ -27,6 +27,12 @@ if ($login && $_SERVER["REQUEST_METHOD"] == "POST") {
         $error_msg = mysqli_error($conn);
         $error = true;
       }
+    } else {
+      $error = true;
+      $error_msg = "O spotted pode conter até 300 caracteres.";
+    }
+
+
   }
   else {
     $error_msg = "Por favor, preencha todos os dados.";
